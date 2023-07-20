@@ -1,15 +1,15 @@
-import { Schema ,model} from "mongoose";
-const studentSchema=new Schema(
+import { Schema, model } from "mongoose";
+const studentSchema = new Schema(
     {
-        name:{
-            type:String,
-            required:true
+        name: {
+            type: String,
+            required: true
         },
-        age:{
-            type:Date,
-            required:false
+        age: {
+            type: Date,
+            required: false
         }
     },
-    {timestamps:true}
+    { timestamps: true }
 )
-export default model("yassers",studentSchema)
+export default model("yassers", studentSchema)

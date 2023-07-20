@@ -1,26 +1,26 @@
 import { Router } from "express";
-import { students,name } from "../database/usersArray.js"; 
+import { students, name } from "../database/usersArray.js";
 import studentModel from "../database/studentModel.js"
 import { faker } from '@faker-js/faker';
-const router =new Router();
+const router = new Router();
 
-router.get('/', async (req,res)=>{
-   
-    const students=await studentModel.find().lean();
+router.get('/', async (req, res) => {
 
-    res.render("students",{name,students:students});
+    const students = await studentModel.find().lean();
+
+    res.render("students", { name, students: students });
 })
 
-router.get('/update',(req,res)=>{
-    
+router.get('/update', (req, res) => {
+
 })
 
-router.get('/create',(req,res)=>{
-    const studentArray=[];
-    for(let i=0;i<1000;i++){
+router.get('/create', (req, res) => {
+    const studentArray = [];
+    for (let i = 0; i < 1000; i++) {
         studentArray.push({
             name: faker.person.firstName(),
-            age:faker.date.birthdate()
+            age: faker.date.birthdate()
         })
     }
 
